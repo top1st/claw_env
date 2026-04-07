@@ -4,6 +4,8 @@ import pandas as pd
 from datetime import datetime
 import re
 
+from llm_reporting import generate_summary_report, generate_structured_report, detect_anomalies
+
 class HealthcareAutomation:
     def __init__(self, headless=False):
         self.headless = headless
@@ -156,6 +158,27 @@ class HealthcareAutomation:
         if self.playwright:
             self.playwright.stop()
 
+    def run_complete_pipeline(self):
+        """End-to-end: scrape + AI report"""
+        try:
+            self.login()
+            self.navigate_to_employees()
+            data = self.extract_data()
+            self.save_reports(data)
+            
+            # Now generate AI report
+            df = pd.DataFrame(data)
+            summary = generate_summary_report(df)
+            anomalies = detect_anomalies(df)
+            generate_structured_report(df, summary, anomalies)
+            
+            print("\n🎉 Complete pipeline executed!")
+            print("   - Raw data: staff_report.xlsx")
+            print("   - AI report: ai_generated_report.html")
+            
+        except Exception as e:
+            print(f"Pipeline failed: {e}")
+
 # ========== RUN ==========
 if __name__ == "__main__":
     scraper = None
@@ -173,4 +196,3 @@ if __name__ == "__main__":
     finally:
         if scraper:
             scraper.close()
-            
