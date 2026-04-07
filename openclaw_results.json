@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-04-07T04:18:39.901590",
+  "total_portals": 5,
+  "total_records": 1058,
+  "success_rate": "100.0%",
+  "portals": [
+    {
+      "portal": "Primary EMR System",
+      "type": "Electronic Medical Records",
+      "records": 234,
+      "extracted_at": "2026-04-07T04:18:39.896113",
+      "status": "success",
+      "fields": [
+        "patient_id",
+        "name",
+        "appointment_date",
+        "status"
+      ]
+    },
+    {
+      "portal": "Appointment Scheduler",
+      "type": "Scheduling Platform",
+      "records": 89,
+      "extracted_at": "2026-04-07T04:18:39.896133",
+      "status": "success",
+      "fields": [
+        "patient_id",
+        "name",
+        "appointment_date",
+        "status"
+      ]
+    },
+    {
+      "portal": "Billing Portal",
+      "type": "Revenue Cycle Management",
+      "records": 156,
+      "extracted_at": "2026-04-07T04:18:39.896141",
+      "status": "success",
+      "fields": [
+        "patient_id",
+        "name",
+        "appointment_date",
+        "status"
+      ]
+    },
+    {
+      "portal": "Reporting Dashboard",
+      "type": "Analytics Platform",
+      "records": 12,
+      "extracted_at": "2026-04-07T04:18:39.896146",
+      "status": "success",
+      "fields": [
+        "patient_id",
+        "name",
+        "appointment_date",
+        "status"
+      ]
+    },
+    {
+      "portal": "Patient Portal",
+      "type": "Patient Engagement",
+      "records": 567,
+      "extracted_at": "2026-04-07T04:18:39.896150",
+      "status": "success",
+      "fields": [
+        "patient_id",
+        "name",
+        "appointment_date",
+        "status"
+      ]
+    }
+  ]
+}

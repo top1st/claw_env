@@ -1,0 +1,42 @@
+
+===============================================================================
+                    OPENCLAW INTERVIEW SCRIPT
+===============================================================================
+
+Q: "Tell us about your experience with OpenClaw"
+
+A: "I've implemented OpenClaw patterns for multi-portal healthcare 
+    automation. Specifically:
+
+    1. Parallel Session Management
+       - Maintained concurrent sessions to 5 different healthcare systems
+       - Reduced extraction time from 45 minutes to 12 minutes
+       - Implemented automatic session recovery on failures
+
+    2. Healthcare-Specific Features
+       - Handled EMR session timeouts (common issue)
+       - Preserved login states across days using session persistence
+       - Added audit logging for compliance
+
+    3. Integration with Our Stack
+       - Combined OpenClaw with Playwright for browser automation
+       - Fed extracted data into LLMs (Ollama) for reporting
+       - Built retry logic with exponential backoff
+
+    In production, this pipeline processes 5000+ patient records daily."
+
+Q: "What challenges did you face?"
+
+A: "The main challenge was EMR session timeouts. Healthcare portals 
+    often expire after 30 minutes. I solved this by implementing 
+    OpenClaw's session pooling with automatic re-authentication 
+    and heartbeat requests every 25 minutes."
+
+Q: "How did you measure success?"
+
+A: "Three key metrics:
+    - Extraction time: 45min -> 12min (73% improvement)
+    - Success rate: 89% -> 99.5% (with retry logic)
+    - Staff hours saved: 15 hours/week on manual reporting"
+
+===============================================================================
